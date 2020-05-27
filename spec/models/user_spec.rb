@@ -14,10 +14,12 @@ RSpec.describe User, type: :model do
   end
   it 'name should not have more then 50 characters' do
     user.name = 'abcdefghijklmnopqrstuvxwyzabcdefghijklmnopqrstuvxwyz'
-    expect(user.errors[:name]).to include('is too long')
+    user.valid?
+    expect(user.errors[:name]).to include('is too long (maximum is 50 characters)')
   end
   it 'name should not have less than 3 characters' do
-    user.name = 'abcdefghijklmnopqrstuvxwyzabcdefghijklmnopqrstuvxwyz'
-    expect(user.errors[:name]).to include('is too short')
+    user.name = 'ab'
+    user.valid?
+    expect(user.errors[:name]).to include('is too short (minimum is 3 characters)')
   end
 end
