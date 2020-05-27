@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
     user.valid?
     expect(user.errors[:name]).to include('has already been taken')
   end
-  it 'name should not have more then 50 characters' do
+  it 'name should not have more than 50 characters' do
     user.name = 'abcdefghijklmnopqrstuvxwyzabcdefghijklmnopqrstuvxwyz'
     user.valid?
     expect(user.errors[:name]).to include('is too long (maximum is 50 characters)')

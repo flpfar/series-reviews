@@ -10,14 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_27_204202) do
+ActiveRecord::Schema.define(version: 2020_05_27_214505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "author_id", null: false
+    t.string "title", limit: 120, null: false
+    t.text "text", null: false
+    t.string "image", default: "default.png"
+    t.datetime "created_at", null: false
+    t.index ["author_id"], name: "index_reviews_on_author_id"
+    t.index ["title"], name: "index_reviews_on_title"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name", limit: 50, null: false
     t.index ["name"], name: "index_users_on_name"
   end
 
+  add_foreign_key "reviews", "users", column: "author_id"
 end
