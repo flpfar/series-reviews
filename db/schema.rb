@@ -17,8 +17,6 @@ ActiveRecord::Schema.define(version: 2020_05_27_204202) do
 
   create_table "users", force: :cascade do |t|
     t.string "name", limit: 50, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["name"], name: "index_users_on_name"
   end
 
