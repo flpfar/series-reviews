@@ -1,7 +1,6 @@
 FactoryBot.define do
   factory :category do
-    # name { "New Category #{rand(15..2000)}" }
-    sequence(:name) { |n| "New Category #{n}" }
-    sequence(:priority) { |n| (200 + n) }
+    sequence(:name) { |n| "New Category #{n + rand(100..2000)}" }
+    sequence(:priority) { |n| (n + rand(100..2000)) }
   end
 end
