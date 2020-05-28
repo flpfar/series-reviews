@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_05_28_120132) do
   create_table "categories_reviews", id: false, force: :cascade do |t|
     t.bigint "category_id", null: false
     t.bigint "review_id", null: false
-    t.index ["category_id", "review_id"], name: "index_categories_reviews_on_category_id_and_review_id"
+    t.index ["category_id", "review_id"], name: "index_categories_reviews_on_category_id_and_review_id", unique: true
     t.index ["category_id"], name: "index_categories_reviews_on_category_id"
     t.index ["review_id"], name: "index_categories_reviews_on_review_id"
   end

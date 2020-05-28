@@ -34,6 +34,21 @@ RSpec.describe Review, type: :model do
     expect(review.errors[:text]).to include("can't be blank")
   end
 
+  it 'categories should not be duplicated' do
+    review = create(:review)
+    review.categories.clear
+    review.categories << Category.first
+    review.categories << Category.first
+    expect(review.categories.size).to be(1)
+  end
+
+  it 'should raise error if category is duplicated' do
+    review = build(:review)
+    some_category = Category.first
+    review.categories.replace([some_category, some_category])
+    expect { review.save }.to raise_error(ActiveRecord::RecordNotUnique)
+  end
+
   it 'should have at least one category' do
     review = create(:review)
     review.categories.clear

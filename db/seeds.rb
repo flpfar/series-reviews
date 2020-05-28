@@ -9,3 +9,4 @@
 categs = %w[Comedy Sci-Fi Horror Romance Action Thriller Drama Mistery Crime Animation Adventure Fantasy Documentary]
 
 categs.each_with_index { |name, priority| Category.create(name: name, priority: priority + 1) }
+User.create(name: 'test')
