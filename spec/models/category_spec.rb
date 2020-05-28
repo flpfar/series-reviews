@@ -28,8 +28,8 @@ RSpec.describe Category, type: :model do
 
   it 'priority should be unique' do
     existing_category = create(:category)
-    category.priority = existing_category.name
+    category.priority = existing_category.priority
     category.valid?
-    expect(category.errors[:name]).to include('has already been taken')
+    expect(category.errors[:priority]).to include('has already been taken')
   end
 end
