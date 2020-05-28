@@ -33,4 +33,11 @@ RSpec.describe Review, type: :model do
     review.valid?
     expect(review.errors[:text]).to include("can't be blank")
   end
+
+  it 'should have at least one category' do
+    review = create(:review)
+    review.categories.clear
+    review.valid?
+    expect(review.errors[:categories]).to include("can't be blank")
+  end
 end
