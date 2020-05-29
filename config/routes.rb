@@ -19,4 +19,5 @@ Rails.application.routes.draw do
 
   # Votes controller routes
   post '/reviews/:id/votes', to: 'votes#create'
+  delete '/reviews/:id/votes', to: 'votes#destroy'
 end
