@@ -10,4 +10,9 @@ class Review < ApplicationRecord
   validates :author, :title, :text, presence: true
   validates :title, length: { in: 1..120 }, uniqueness: { scope: :author }
   validates :categories, presence: true
+
+  def self.featured
+    featured_id = Vote.group(:review_id).order(count: :desc).count.first[0]
+    Review.find(featured_id)
+  end
 end
