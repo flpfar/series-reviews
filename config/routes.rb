@@ -1,3 +1,22 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # Pages controller Route
+  root 'pages#index'
+
+  # Sessions controller routes
+  get '/signin', to: 'sessions#new'
+  post '/signin', to: 'sessions#create'
+  delete '/singin', to: 'sessions#delete'
+
+  # User controller routes
+  get '/signup', to: 'users#new'
+  post '/users', to: 'users#create'
+
+  # Categories controller routes
+  resources :categories, only: [:show]
+
+  # Reviews controller routes
+  resources :reviews, only: %i[new create]
+
+  # Votes controller routes
+  post '/reviews/:id/votes', to: 'votes#create'
 end
