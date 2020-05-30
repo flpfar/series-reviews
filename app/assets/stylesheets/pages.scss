@@ -1,3 +1,32 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home {
+  background-color: #000;
+  width: 100%;
+  flex: 1;
+
+  .featured {
+    background-color: red;
+    flex-grow: 2;
+  }
+
+  .categories {
+    background-color: yellow;
+    flex-grow: 1;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .category {
+      min-width: 25%;
+      border: 1px solid red;
+    }
+  }
+}
