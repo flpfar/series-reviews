@@ -4,7 +4,9 @@
 
     <% @reviews.each do |review| %>
     <article class="review">
-      <%= image_tag review.image, class: 'review-image' %>
+      <div class="image-content">
+        <%= image_tag review.image, class: 'review-image' %>
+      </div>
       <div class="review-content d-flex flex-column p-4">
         <h2 class="title"><%= review.title %></h2>
         <p class="text">

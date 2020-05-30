@@ -19,22 +19,24 @@
   gap: 1px;
 
   .review {
-    position: relative;
     height: 300px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: #fff;
 
-    &::before {
-      content: "";
-      background-image: repeating-linear-gradient(135deg, transparent, transparent 4px, rgba(255,255,255,.1) 2px, rgba(0, 0, 0, .1) 6px);
-      opacity: .5;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      position: absolute;
-      z-index: 1;
+    .image-content {
+      position: relative;
+      &::before {
+        content: "";
+        background-image: repeating-linear-gradient(135deg, transparent, transparent 4px, rgba(255,255,255,.1) 2px, rgba(0, 0, 0, .1) 6px);
+        opacity: 0.6;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: 2;
+      }
     }
 
     &-image {
@@ -44,6 +46,7 @@
     }
 
     &-content {
+      background-image: repeating-linear-gradient(135deg, transparent, transparent 4px, rgba(255,255,255,0) 2px, rgba(100, 100, 100, .1) 6px);
       .title {
         font-family: "Chivo", sans-serif;
         font-size: 1rem;
