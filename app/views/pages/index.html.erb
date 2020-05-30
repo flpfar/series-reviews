@@ -2,27 +2,19 @@
   <meta name="turbolinks-cache-control" content="no-cache">
 <% end %>
 
-<main class="home d-flex flex-column">
-  <section class="featured">
-
+<main class="home">
+  <section class="featured review-cover d-flex align-items-end" style="background-image: url(<%= image_url_generator(@featured_review.image)%>)">
+    <h2 class="featured-title"><%= @featured_review.title %></h2>
   </section>
-    
-<%#  %>
+
   <section class="categories d-flex align-items-stretch mb-0">
-    <article class="category">
-    teste1
-    </article>
-    <article class="category">
-    teste2
-    </article>
-    <article class="category">
-    teste3
-    </article>
-    <article class="category">
-    teste4
-    </article>
-    <article class="category">
-    teste5
-    </article>
+    <% @categories.each do |category| %>
+      <% if category.most_recent_review %>
+        <article class="category review-cover d-flex flex-column justify-content-between" style="background-image: url(<%= image_url_generator(category.most_recent_review.image)%>)">
+          <h2 class="category-title title"><%= link_to category.name, category_path(category.id), class: 'category-title-link' %></h2>
+          <h2 class="most-recent-review title"><%= category.most_recent_review.title %></h2>
+        </article>
+      <% end %>
+    <% end %>
   </section>
 </main>
