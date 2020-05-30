@@ -17,3 +17,13 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require jquery.slick
+
+$(document).ready(function(){
+  $('.categories').slick({
+      infinite: true,
+      speed: 300,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+  });
+});

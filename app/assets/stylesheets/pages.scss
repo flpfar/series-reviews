@@ -15,18 +15,41 @@
   .categories {
     background-color: yellow;
     flex-grow: 1;
-    overflow-x: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    scroll-behavior: smooth;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
 
     .category {
-      min-width: 25%;
       border: 1px solid red;
+      height: 100%;
     }
   }
+
+  .slick-list {
+    min-height: 100%;
+    .slick-track {
+      min-height: 100%;
+      display: flex;
+      align-items: stretch;
+      .slick-slide{
+        display: flex;
+        height: auto;
+        flex: 1 1 auto;
+        div {
+          flex: 1 1 auto;
+        }
+      }
+    }
+
+  }
+
+  .slick-prev::before, .slick-next::before {
+    color: #000;
+  }
+  
+  .slick-next {
+    right: 15px;
+  }
+  
+  .slick-prev {
+    left: 15px;
+  }
+  
 }
