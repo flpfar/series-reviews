@@ -1,0 +1,23 @@
+<main class="category-show">
+  <h1 class="category-title"><span>&gt; </span><%= @category.name %></h1>
+  <section class="reviews-list">
+
+    <% @reviews.each do |review| %>
+    <article class="review">
+      <%= image_tag review.image, class: 'review-image' %>
+      <div class="review-content d-flex flex-column p-4">
+        <h2 class="title"><%= review.title %></h2>
+        <p class="text">
+          <%= review.text[0..201] %>
+          <%= '...' if review.text.length > 200 %>
+        </p>
+        <div class="review-votes mt-auto align-self-end">
+          <%= fa_icon "star", text: "25" %>
+          <%= link_to 'Vote' %>
+        </div>
+      </div>
+    </article>
+    <% end %>
+
+  </section>
+</main>

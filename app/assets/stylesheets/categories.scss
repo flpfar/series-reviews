@@ -1,3 +1,63 @@
 // Place all the styles related to the Categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.category-title {
+  color: #fff;
+  margin: 0;
+  padding: 10px 5px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  span {
+    color: #f66337;
+  }
+}
+
+.reviews-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+
+  .review {
+    position: relative;
+    height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #fff;
+
+    &::before {
+      content: "";
+      background-image: repeating-linear-gradient(135deg, transparent, transparent 4px, rgba(255,255,255,.1) 2px, rgba(0, 0, 0, .1) 6px);
+      opacity: .5;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: 1;
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &-content {
+      .title {
+        font-family: "Chivo", sans-serif;
+        font-size: 1rem;
+        font-weight: 900;
+        color: #4e443d;
+      }
+
+      .text {
+        font-size: 0.8rem;
+      }
+    }
+
+    &-votes {
+      font-size: 0.9rem;
+    }
+  }
+}

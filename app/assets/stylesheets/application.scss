@@ -20,21 +20,39 @@
 @import "bootstrap";
 @import 'slick';
 @import 'slick-theme';
+@import "font-awesome";
 
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&family=Lato:wght@300;400;700;900&display=swap');
+
+@font-face {
+  font-family: "CartoGothic";
+  font-weight: 400;
+  src: asset-url("fonts/CartoGothicStd-Book.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "CartoGothic";
+  font-weight: 700;
+  src: asset-url("fonts/CartoGothicStd-Bold.otf") format("truetype");
+}
 
 body {
   padding-top: 60px;
+  font-family: "CartoGothic", sans-serif;
+  background-color: #4e443d;
 }
 
 nav {
+  font-family: "Lato", sans-serif;
   width: 100%;
   height: 60px;
   position: fixed;
   top: 0;
   left: 0;
   background-color: #fff;
-  z-index: 1;
+  z-index: 10;
   font-size: 0.9rem;
+  border-bottom: 2px solid #887c78;
   
   .logo {
     height: 40px;
@@ -42,7 +60,7 @@ nav {
 
   .nav-link {
     font-weight: 700;
-    color: #aaa;
+    color: #887c78;
     &:hover {
     color: #f66337;
     }
@@ -55,6 +73,7 @@ footer {
   font-size: 0.9rem;
   width: 100%;
   height: 40px;
+  border-top: 1px solid #887c78;
 
   .logo {
     height: 30px;
