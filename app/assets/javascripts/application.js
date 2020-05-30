@@ -19,7 +19,7 @@
 //= require bootstrap-sprockets
 //= require jquery.slick
 
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
   $('.categories').slick({
       infinite: true,
       speed: 300,
