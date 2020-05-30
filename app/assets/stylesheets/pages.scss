@@ -41,7 +41,11 @@
   }
 
   .slick-prev::before, .slick-next::before {
-    color: #000;
+    color: #f66337;
+  }
+
+  .slick-prev, .slick-next {
+    z-index: 1;
   }
   
   .slick-next {
