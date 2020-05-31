@@ -16,6 +16,9 @@
 
 @import "pages";
 @import "categories";
+@import "reviews";
+@import "forms";
+
 
 @import "bootstrap";
 @import 'slick';
@@ -89,5 +92,16 @@ footer {
   .behance-logo {
     height: 30px;
     filter: invert(42%) sepia(99%) saturate(1007%) hue-rotate(339deg) brightness(99%) contrast(94%);
+  }
+}
+
+.page-title {
+  color: #fff;
+  margin: 0 20px;
+  padding: 10px 5px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  span {
+    color: #f66337;
   }
 }

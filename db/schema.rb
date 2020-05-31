@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_05_28_200728) do
     t.bigint "author_id", null: false
     t.string "title", limit: 120, null: false
     t.text "text", null: false
-    t.string "image", default: "default.png"
+    t.string "image"
     t.datetime "created_at", null: false
     t.index ["author_id"], name: "index_reviews_on_author_id"
     t.index ["title"], name: "index_reviews_on_title"

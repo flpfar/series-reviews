@@ -1,5 +1,8 @@
 class ReviewsController < ApplicationController
-  def new; end
+  def new
+    @review = Review.new
+    @categories = Category.all.order(:name)
+  end
 
   def create
     @review = current_user.reviews.new(review_params)

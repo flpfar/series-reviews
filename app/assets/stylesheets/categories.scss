@@ -2,17 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.category-title {
-  color: #fff;
-  margin: 0;
-  padding: 10px 5px;
-  font-weight: 700;
-  font-size: 1.2rem;
-  span {
-    color: #f66337;
-  }
-}
-
 .reviews-list {
   display: grid;
   grid-template-columns: 1fr 1fr;

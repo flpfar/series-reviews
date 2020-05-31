@@ -11,6 +11,7 @@ class Review < ApplicationRecord
 
   before_validation do
     categories << Category.where(id: @categories_ids) unless !@categories_ids || @categories_ids.empty?
+    image = 'default.png' if image.nil? || image.empty?
   end
 
   validates :author, :title, :text, presence: true
