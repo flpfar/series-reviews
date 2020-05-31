@@ -42,7 +42,7 @@
         font-family: "Chivo", sans-serif;
         font-size: 1rem;
         font-weight: 900;
-        color: #4e443d;
+        color: $primary-color;
       }
 
       .text {
@@ -52,7 +52,7 @@
     }
 
     &-author {
-      color: #887c78;
+      color: $tertiary-color;
       font-size: 0.8rem;
       overflow: hidden;
     }

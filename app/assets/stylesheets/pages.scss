@@ -21,7 +21,7 @@
       font-family: "Chivo", sans-serif;
       font-size: 1.2rem;
       font-weight: 900;
-      color: #f66337;
+      color: $secondary-color;
       text-shadow: 2px 2px 2px #000;
       margin: 10px 0;
     }
@@ -61,11 +61,11 @@
           }
 
           &:hover {
-            color: #f66337;
+            color: $secondary-color;
             text-decoration: none;
 
             &::after {
-              background-color: #f66337;
+              background-color: $secondary-color;
             }
           }
         }

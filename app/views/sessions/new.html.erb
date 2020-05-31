@@ -1,10 +1,9 @@
 <main class="session-new">
-  <h1 class="page-title"><span>&gt; </span>Sign In</h1>
-  <section class="user-form-container w-75 p-4 mx-auto mb-4 bg-light">
+  <section class="user-form-container w-25 p-4 mx-auto my-4 bg-light">
+    <h1 class="sign-title"><span>&gt; </span>Login</h1>
     <%= simple_form_for :session, url: signin_path() do |f| %>
-      <%= f.error_notification %>
       <%= f.input :username, label: false, placeholder: 'Username' %>
-      <%= f.button :submit, 'Sign In', class: "btn-primary" %>
+      <%= f.button :submit, 'Login', class: "btn-primary btn-block" %>
     <% end %>
   </section>
 </main>
