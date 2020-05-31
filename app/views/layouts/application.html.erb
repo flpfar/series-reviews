@@ -18,14 +18,22 @@
       <%= link_to root_path do %>
         <%=image_tag "logo.png", alt: "Series Reviews", class: "logo"%>
       <% end %>
+      <% if current_user %>
       <ul class="menu nav">
         <li class="nav-item"><a href="<%= root_path %>" class="nav-link">HOME</a></li>
         <li class="nav-item"><a href="<%= new_review_path %>" class="nav-link">WRITE AN ARTICLE</a></li>
       </ul>
+      <% end %>
       <ul class="user-nav nav">
-        <li class="nav-item"><%= link_to 'USER', '#', class: "nav-link disabled" %></li>
-        <li class="nav-item"><a href="" class="nav-link">LOGOUT</a></li>
+      <% if current_user %>
+        <li class="nav-item"><%= link_to current_user.name.upcase, '#', class: "nav-link disabled" %></li>
+        <li class="nav-item"><%= link_to 'LOGOUT', signout_path, method: :delete, class: "nav-link" %></li>
+      <% else %>
+        <li class="nav-item"><%= link_to 'LOGIN', signin_path, class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to 'SIGNUP', signup_path, class: "nav-link" %></li>
+      <% end %>
       </ul>
+      
     </nav>
     <% flash.each do |type, msg| %>
       <div class="text-center position-absolute px-4 alert alert-<%= notice_or_alert(type) %>">

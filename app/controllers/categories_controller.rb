@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :redirect_if_not_logged_in
+
   def show
     @category = Category.find_by(id: params[:id])
     if @category
