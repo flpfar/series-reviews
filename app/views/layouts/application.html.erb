@@ -27,6 +27,11 @@
         <li class="nav-item"><a href="" class="nav-link">LOGOUT</a></li>
       </ul>
     </nav>
+    <% flash.each do |type, msg| %>
+      <div class="text-center position-absolute px-4 alert alert-<%= notice_or_alert(type) %>">
+        <%= msg %>
+      </div>
+    <% end %>
     <%= yield %>
     <footer class="footer mt-auto d-flex justify-content-between align-items-center px-3">
       <%= link_to root_path do %>

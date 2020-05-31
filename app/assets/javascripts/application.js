@@ -27,3 +27,7 @@ $(document).on('turbolinks:load', function(){
       slidesToScroll: 1,
   });
 });
+
+$(document).ready(function(){
+  setTimeout(() => $('.alert').slideUp(), 3000);
+});

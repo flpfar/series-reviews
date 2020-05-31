@@ -67,6 +67,13 @@ nav {
   }
 }
 
+.alert {
+  line-height: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
 footer {
   background-color: #4e443d;
   color: #fff;
