@@ -1,6 +1,4 @@
 class Review < ApplicationRecord
-  attr_accessor :categories_ids
-
   belongs_to :author, class_name: 'User'
   has_many :votes, dependent: :destroy
   has_and_belongs_to_many :categories do
@@ -9,9 +7,8 @@ class Review < ApplicationRecord
     end
   end
 
-  before_validation do
-    categories << Category.where(id: @categories_ids) unless !@categories_ids || @categories_ids.empty?
-    image = 'default.png' if image.nil? || image.empty?
+  before_create do
+    self.image = 'default.png' if image.nil? || image.empty?
   end
 
   validates :author, :title, :text, presence: true

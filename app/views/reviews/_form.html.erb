@@ -2,7 +2,7 @@
   <%= f.error_notification %>
   <%= f.input :title, label: false, placeholder: 'Title*' %>
   <%= f.input :image, label: false, default: '', placeholder: 'Cover image URL (e.g.: https://example.com/image.jpg)' %>
-  <%= f.association :categories, as: :check_boxes, selected: :categories_ids, include_hidden: false, item_wrapper_tag: :div, item_wrapper_class: "form-check-inline"%>
+  <%= f.association :categories, as: :check_boxes, selected: :category_ids, include_hidden: false, item_wrapper_tag: :div, item_wrapper_class: "form-check-inline"%>
   <%= f.input :text, label: false, placeholder: 'Content*' %>
   <%= f.button :submit, class: "btn-primary" %>
 <% end %>
