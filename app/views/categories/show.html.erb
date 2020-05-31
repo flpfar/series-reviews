@@ -10,12 +10,15 @@
       <div class="review-content d-flex flex-column p-4">
         <h2 class="title"><%= review.title %></h2>
         <p class="text">
-          <%= review.text[0..201] %>
-          <%= '...' if review.text.length > 200 %>
+          <%=review.text[0..201]%>
+          <%='...' if review.text.length > 200 %>
         </p>
-        <div class="review-votes mt-auto align-self-end">
-          <%= fa_icon "star", text: "25" %>
-          <%= link_to 'Vote' %>
+        <div class="review-footer mt-auto d-flex justify-content-between">
+          <div class="review-author">by <%= review.author.name %></div>
+          <div class="review-votes">
+            <%= fa_icon "star", text: "25" %>
+            <%= link_to 'Vote' %>
+          </div>
         </div>
       </div>
     </article>
