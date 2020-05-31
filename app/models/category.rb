@@ -9,10 +9,10 @@ class Category < ApplicationRecord
   validates :name, length: { in: 1..20 }
 
   def self.ordered_by_priority
-    Category.all.order(:priority)
+    Category.includes(:reviews).order(:priority)
   end
 
   def most_recent_review
-    reviews.order(created_at: :desc).limit(1).first
+    reviews.max_by(&:created_at)
   end
 end
