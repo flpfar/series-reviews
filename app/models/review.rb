@@ -19,7 +19,10 @@ class Review < ApplicationRecord
   validates :categories, presence: true
 
   def self.featured
-    featured_id = Vote.group(:review_id).order(count: :desc).count.first[0]
+    votes_ordered = Vote.group(:review_id).order(count: :desc).count.first
+    return Review.last if votes_ordered.nil?
+
+    featured_id = votes_ordered[0]
     Review.find(featured_id)
   end
 end
