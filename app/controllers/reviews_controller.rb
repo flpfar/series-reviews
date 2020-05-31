@@ -20,6 +20,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:title, :text, :image, :categories_ids)
+    params.require(:review).permit(:title, :text, :image, category_ids: [])
   end
 end
