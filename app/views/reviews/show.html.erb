@@ -4,16 +4,24 @@
       <h1 class="review-title align-self-end"><%= @review.title %></h1>
     </section>
     <section class="review-body p-4">
-      <header class="review-header d-flex justify-content-between align-items-center border bg-light p-2 mb-4">
-        <div class="review-votes">
-          <%= fa_icon "star", text: @review.votes.size %>
-          <%= vote_or_unvote_btn(@review) %>
-        </div>
-        <div class="review-author">
-          <% unless @review.author_id == current_user.id %>
-            Author: <%= link_to @review.author.name, profile_path(@review.author_id), class: 'author-profile-link' %>
+      <header class="review-header">
+        <ul class="categories-list list-inline mb-2">
+          <strong class="mr-2">Categories:</strong>
+          <% @review.categories.each do |category| %>
+            <li class="list-inline-item"><%= link_to category.name, category_path(category.id), class: 'tertiary-link' %></li>
           <% end %>
-          <%= show_owner_controllers(@review.author_id, @review.id) %>
+        </ul>
+        <div class="review-author-votes d-flex justify-content-between align-items-center border bg-light p-2 mb-4">
+          <div class="review-votes">
+            <%= fa_icon "star", text: @review.votes.size %>
+            <%= vote_or_unvote_btn(@review) %>
+          </div>
+          <div class="review-author">
+            <% unless @review.author_id == current_user.id %>
+              Author: <%= link_to @review.author.name, profile_path(@review.author_id), class: 'author-profile-link' %>
+            <% end %>
+            <%= show_owner_controllers(@review.author_id, @review.id) %>
+          </div>
         </div>
       </header>
       <%= simple_format(@review.text) %>

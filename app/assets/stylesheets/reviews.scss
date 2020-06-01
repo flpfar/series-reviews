@@ -29,7 +29,10 @@
     }
 
     &-body {
-      .review-header {
+      .categories-list {
+        font-size: 0.8rem;
+      }
+      .review-author-votes {
         .review-author {
           color: $tertiary-color;
           font-size: 0.8rem;
