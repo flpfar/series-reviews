@@ -7,9 +7,9 @@
 
     <% @reviews.each do |review| %>
     <article class="review">
-      <div class="image-content">
+      <%= link_to review_path(review.id), class: 'image-content' do %>
         <%= image_tag review.image, class: 'review-image' %>
-      </div>
+      <% end %>
       <div class="review-content d-flex flex-column p-4">
         <h2 class="title"><%= link_to review.title, review_path(review.id), class: 'tertiary-link' %></h2>
         <ul class="categories-list list-group list-group-horizontal">

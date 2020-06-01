@@ -16,6 +16,12 @@
     .image-content {
       position: relative;
       height: inherit;
+      &:hover {
+        &::before {
+          background-image: none;
+          box-shadow: inset 0px 0px 100px 20px rgba(0,0,0,0.8);
+        }
+      }
       &::before {
         content: "";
         background-image: repeating-linear-gradient(135deg, transparent, transparent 4px, rgba(255,255,255,.1) 2px, rgba(0, 0, 0, .1) 6px);
