@@ -12,7 +12,7 @@
       <% if category.most_recent_review %>
         <article class="category review-cover d-flex flex-column justify-content-between" style="background-image: url(<%= image_url_generator(category.most_recent_review.image)%>)">
           <h2 class="category-title title"><%= link_to category.name, category_path(category.id), class: 'category-title-link' %></h2>
-          <h2 class="most-recent-review title"><%= category.most_recent_review.title %></h2>
+          <h3 class="most-recent-review title"><%= category.most_recent_review.title %></h3>
         </article>
       <% end %>
     <% end %>
