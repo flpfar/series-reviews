@@ -14,6 +14,9 @@ class Review < ApplicationRecord
   validates :author, :title, :text, presence: true
   validates :title, length: { in: 1..120 }, uniqueness: { scope: :author }
   validates :categories, presence: true
+  validates_format_of :image, with: /(^http.+\.(gif|jpe?g|png)$)|^(default.png)/,
+                              message: 'Invalid image URL. Should be like https://example.com/image.jpg',
+                              allow_blank: true
 
   def self.featured
     votes_ordered = Vote.group(:review_id).order(count: :desc).count.first
