@@ -19,7 +19,7 @@
         </ul>
         <div class="review-footer mt-auto d-flex justify-content-between">
           <div class="review-author">
-            <%= show_owner_controllers(review.author_id) %>
+            <%= show_owner_controllers(review.author_id, review.id) %>
           </div>
           <div class="review-votes">
             <%= vote_or_unvote_btn(review) %>

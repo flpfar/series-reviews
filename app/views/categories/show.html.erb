@@ -18,7 +18,7 @@
             <% unless review.author_id == current_user.id %>
               by <%= link_to review.author.name, profile_path(review.author_id), class: 'author-profile-link' %>
             <% end %>
-            <%= show_owner_controllers(review.author_id) %>
+            <%= show_owner_controllers(review.author_id, review.id) %>
           </div>
           <div class="review-votes">
             <%= vote_or_unvote_btn(review) %>
