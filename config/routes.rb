@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   resources :reviews, only: %i[new create]
 
   # Votes controller routes
-  post '/reviews/:id/votes', to: 'votes#create'
-  delete '/reviews/:id/votes', to: 'votes#destroy'
+  post '/reviews/:id/votes', to: 'votes#create', as: 'vote'
+  delete '/reviews/:id/votes', to: 'votes#destroy', as: 'unvote'
 end

@@ -16,8 +16,8 @@
         <div class="review-footer mt-auto d-flex justify-content-between">
           <div class="review-author">by <%= review.author.name %></div>
           <div class="review-votes">
-            <%= fa_icon "star", text: "25" %>
-            <%= link_to 'Vote' %>
+            <%= vote_or_unvote_btn(review) %>
+            <%= fa_icon "star", text: review.votes.size %>
           </div>
         </div>
       </div>
