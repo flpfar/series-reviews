@@ -96,6 +96,30 @@ footer {
   }
 }
 
+.primary-link {
+  color: #fff;
+
+  &:hover {
+    color: #ffff00;
+  }
+}
+
+.secondary-link {
+  color: $secondary-color;
+
+  &:hover {
+    color: #ffff00;
+  }
+}
+
+.tertiary-link {
+  color: $primary-color;
+
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
 .page-title {
   color: #fff;
   margin: 0 20px;
