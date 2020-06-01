@@ -26,7 +26,7 @@
       <% end %>
       <ul class="user-nav nav">
       <% if current_user %>
-        <li class="nav-item"><%= link_to current_user.name.upcase, '#', class: "nav-link disabled" %></li>
+        <li class="nav-item"><%= link_to current_user.name.upcase, profile_path(current_user.id), class: "nav-link" %></li>
         <li class="nav-item"><%= link_to 'LOGOUT', signout_path, method: :delete, class: "nav-link" %></li>
       <% else %>
         <li class="nav-item"><%= link_to 'LOGIN', signin_path, class: "nav-link" %></li>

@@ -1,5 +1,8 @@
 <main class="category-show">
-  <h1 class="category-title page-title"><span>&gt; </span><%= @category.name %></h1>
+  <h1 class="category-title page-title">
+    <span>&gt; </span>
+    Reviews by: <%= @user.name %>
+  </h1>
   <section class="reviews-list">
 
     <% @reviews.each do |review| %>
@@ -9,15 +12,13 @@
       </div>
       <div class="review-content d-flex flex-column p-4">
         <h2 class="title"><%= review.title %></h2>
-        <p class="text">
-          <%=review.text[0..201]%>
-          <%='...' if review.text.length > 200 %>
-        </p>
+        <ul class="categories-list list-group list-group-horizontal">
+          <% review.categories.each do |category| %>
+            <li class="list-group-item"><%= link_to category.name, category_path(category.id), class: 'categories-list-link' %></li>
+          <% end %>
+        </ul>
         <div class="review-footer mt-auto d-flex justify-content-between">
           <div class="review-author">
-            <% unless review.author_id == current_user.id %>
-              by <%= link_to review.author.name, profile_path(review.author_id), class: 'author-profile-link' %>
-            <% end %>
             <%= show_owner_controllers(review.author_id) %>
           </div>
           <div class="review-votes">

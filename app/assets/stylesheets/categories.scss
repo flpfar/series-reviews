@@ -49,12 +49,38 @@
         font-size: 0.8rem;
         overflow: hidden;
       }
+
+      .categories-list {
+        font-size: 0.7rem;
+        
+        .list-group-item {
+          padding: 0.3rem;
+        }
+
+        &-link {
+          color: $secondary-color;
+        }
+      }
     }
 
     &-author {
       color: $tertiary-color;
       font-size: 0.8rem;
       overflow: hidden;
+
+      .author-profile-link {
+        color: $primary-color;
+        font-weight: 700;
+      }
+    }
+
+    .owner-controllers {
+      font-size: 1rem;
+      color: $secondary-color;
+
+      &:hover {
+        color: $primary-color;
+      }
     }
 
     &-votes {

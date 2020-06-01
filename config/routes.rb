@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # User controller routes
   get '/signup', to: 'users#new'
   post '/users', to: 'users#create'
+  get '/users/:id', to: 'users#show', as: 'profile'
 
   # Categories controller routes
   resources :categories, only: [:show]

@@ -1,4 +1,14 @@
 class UsersController < ApplicationController
+  def show
+    @user = User.find_by(id: params[:id])
+    if @user
+      @reviews = @user.reviews.includes(:votes).includes(:author).order(created_at: :desc).includes(:categories)
+    else
+      flash[:alert] = 'User not found'
+      redirect_to root_path
+    end
+  end
+
   def new
     @user = User.new
   end
