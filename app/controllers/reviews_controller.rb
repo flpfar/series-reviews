@@ -1,6 +1,10 @@
 class ReviewsController < ApplicationController
   before_action :redirect_if_not_logged_in
 
+  def show
+    @review = Review.find(params[:id])
+  end
+
   def new
     @review = Review.new
   end
