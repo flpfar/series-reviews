@@ -7,7 +7,7 @@ class Review < ApplicationRecord
     end
   end
 
-  before_create do
+  before_save do
     self.image = 'default.png' if image.nil? || image.empty?
   end
 

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
 
   # Reviews controller routes
-  resources :reviews, only: %i[new create destroy]
+  resources :reviews, only: %i[new create edit update destroy]
 
   # Votes controller routes
   post '/reviews/:id/votes', to: 'votes#create', as: 'vote'

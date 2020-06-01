@@ -1,4 +1,4 @@
-<%= simple_form_for @review, url: reviews_path() do |f| %>
+<%= simple_form_for @review do |f| %>
   <%= f.error_notification %>
   <%= f.input :title, label: false, placeholder: 'Title*' %>
   <%= f.input :image, label: false, default: '', placeholder: 'Cover image URL (e.g.: https://example.com/image.jpg)' %>

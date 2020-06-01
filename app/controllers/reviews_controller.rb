@@ -16,6 +16,30 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @review = Review.find(params[:id])
+    if @review
+      unless @review.author_id == current_user.id
+        flash[:alert] = 'You are not authorized to edit this review.'
+        redirect_to root_path
+      end
+    else
+      flash[:alert] = 'Review not found.'
+      redirect_to root_path
+    end
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+      flash[:notice] = 'Review was successfully updated.'
+      redirect_to root_path
+    else
+      flash.now[:alert] = 'Review was NOT successfully updated.'
+      render :edit
+    end
+  end
+
   def destroy
     review = Review.find(params[:id])
     if review
