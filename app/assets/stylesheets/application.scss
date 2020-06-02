@@ -120,6 +120,14 @@ footer {
   }
 }
 
+.sign-link {
+  color: $secondary-color;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
 .page-title {
   color: #fff;
   margin: 0 20px;
