@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_if_not_logged_in
-    redirect_to root_path unless current_user
+    redirect_to root_path, alert: 'You are not authorized to access this page.' unless current_user
   end
 end
