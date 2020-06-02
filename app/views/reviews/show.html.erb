@@ -5,12 +5,15 @@
     </section>
     <section class="review-body p-4">
       <header class="review-header">
-        <ul class="categories-list list-inline mb-2">
-          <strong class="mr-2">Categories:</strong>
-          <% @review.categories.each do |category| %>
-            <li class="list-inline-item"><%= link_to category.name, category_path(category.id), class: 'tertiary-link' %></li>
-          <% end %>
-        </ul>
+        <div class="categories-date px-2 d-flex justify-content-between">
+          <ul class="categories-list list-inline mb-2">
+            <strong class="mr-2">Categories:</strong>
+            <% @review.categories.each do |category| %>
+              <li class="list-inline-item"><%= link_to category.name, category_path(category.id), class: 'tertiary-link' %></li>
+            <% end %>
+          </ul>
+          <small>Created at: <em><%= @review.created_at.strftime("%B %d, %Y") %></em></small>
+        </div>
         <div class="review-author-votes d-flex justify-content-between align-items-center border bg-light p-2 mb-4">
           <div class="review-votes">
             <%= fa_icon "star", text: @review.votes.size %>
