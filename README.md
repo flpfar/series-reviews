@@ -31,6 +31,13 @@ It is created to be used as a desktop app, so there may be design issues on mobi
 
 [Series-Reviews](http://series-reviews.herokuapp.com/)
 
+## Entity Relationship Diagram
+
+![erd](https://user-images.githubusercontent.com/15898299/83570539-99f67080-a4fc-11ea-9068-d05519d5d64e.png)
+
+*Automatically generated entity-relationship diagram (ERD) for models, using gem [rails-erd](https://github.com/voormedia/rails-erd). The generated pdf file can be found [here](/docs/erd.pdf).*
+
+
 ## Getting Started
 
 ### Prerequisites
@@ -59,7 +66,12 @@ Open a web browser and type ` http://localhost:3000/ ` on the address bar.
 
 This project uses RSpec for unit testing. In order to run the tests, type `rspec` inside the terminal.
 
+### Generate ERD
+
+To regenerate the ERD pdf file for this project, run ` bundle exec erd --attributes=foreign_keys,timestamps,content ` in the terminal.
+
 ## Future improvements
+
 - Calculate the priority of categories by their number of reviews.
 - Responsive layout.
 - Admin interface to handle categories.
