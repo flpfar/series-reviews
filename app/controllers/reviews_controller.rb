@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
     @review = current_user.reviews.new(review_params)
     if @review.save
       flash[:notice] = 'Review was successfully created.'
-      redirect_to root_path
+      redirect_to review_path(@review.id)
     else
       flash.now[:alert] = 'Review was NOT successfully created.'
       render :new
@@ -37,7 +37,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     if @review.update(review_params)
       flash[:notice] = 'Review was successfully updated.'
-      redirect_to root_path
+      redirect_to review_path(@review.id)
     else
       flash.now[:alert] = 'Review was NOT successfully updated.'
       render :edit
@@ -52,7 +52,7 @@ class ReviewsController < ApplicationController
     else
       flash[:alert] = 'Review could not be deleted. Try again later.'
     end
-    redirect_back(fallback_location: root_path)
+    redirect_to root_path
   end
 
   private
