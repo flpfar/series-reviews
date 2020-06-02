@@ -122,6 +122,7 @@ footer {
 
 .sign-link {
   color: $secondary-color;
+  text-decoration: underline;
 
   &:hover {
     color: $primary-color;

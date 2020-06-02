@@ -15,4 +15,12 @@ module ReviewsHelper
 
     url
   end
+
+  def columns_content_image_order(review, index)
+    image = render partial: 'review_image', locals: { review: review }
+    content = render partial: 'review_content', locals: { review: review }
+    return content + image if ((index + 2) % 4).zero? || ((index + 1) % 4).zero?
+
+    image + content
+  end
 end

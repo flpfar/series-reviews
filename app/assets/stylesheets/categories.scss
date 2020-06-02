@@ -5,10 +5,10 @@
 .reviews-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1px;
+  gap: 6px;
 
   .review {
-    height: 275px;
+    height: 270px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: #fff;
