@@ -29,5 +29,5 @@ $(document).on('turbolinks:load', function(){
 });
 
 $(document).ready(function(){
-  setTimeout(() => $('.alert').slideUp(), 3000);
+  setTimeout(function(){$('.alert').slideUp()} , 3000);
 });
