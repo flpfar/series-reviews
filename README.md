@@ -13,7 +13,7 @@ It is created to be used as a desktop app, so there may be design issues on mobi
 - Create, edit and delete reviews
 - Vote for reviews
 - Featured review (most voted) on cover
-- Categories with most recent review as cover.
+- Categories with most recent review as cover
 
 ## Built With
 
@@ -44,7 +44,7 @@ It is created to be used as a desktop app, so there may be design issues on mobi
 
 - Ruby (version 2.6.5) - To install it, check the [official page](https://www.ruby-lang.org/en/documentation/installation/).
 - Rails (version 5.2.4) - Check [this page](https://www.theodinproject.com/courses/ruby-on-rails/lessons/your-first-rails-application-ruby-on-rails) for more info.
-- Postgres (version >= 9.5) - More information on the [official page](https://www.postgresql.org/docs/9.3/tutorial-install.html)
+- Postgres (version >= 9.5) - More information on the [official page](https://www.postgresql.org/docs/9.3/tutorial-install.html).
 
 ### Setup
 
@@ -55,6 +55,7 @@ Inside the terminal:
 ```
 $ bundle install
 $ rails db:migrate
+$ rails db:seed
 $ rails server
 ```
 
