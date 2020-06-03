@@ -1,0 +1,5 @@
+<% flash.each do |type, msg| %>
+  <div class="text-center position-absolute px-4 alert alert-<%= notice_or_alert(type) %>">
+    <%= msg %>
+  </div>
+<% end %>

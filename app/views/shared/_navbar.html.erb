@@ -1,0 +1,20 @@
+<nav class="d-flex justify-content-between align-items-center px-3">
+  <%= link_to root_path do %>
+    <%=image_tag "logo.png", alt: "Series Reviews", class: "logo"%>
+  <% end %>
+  <% if current_user %>
+  <ul class="menu nav">
+    <li class="nav-item"><a href="<%= root_path %>" class="nav-link">HOME</a></li>
+    <li class="nav-item"><a href="<%= new_review_path %>" class="nav-link">WRITE A REVIEW</a></li>
+  </ul>
+  <% end %>
+  <ul class="user-nav nav">
+  <% if current_user %>
+    <li class="nav-item"><%= link_to current_user.name.upcase, profile_path(current_user.id), class: "nav-link" %></li>
+    <li class="nav-item"><%= link_to 'LOGOUT', signout_path, method: :delete, class: "nav-link" %></li>
+  <% else %>
+    <li class="nav-item"><%= link_to 'LOGIN', signin_path, class: "nav-link" %></li>
+    <li class="nav-item"><%= link_to 'SIGNUP', signup_path, class: "nav-link" %></li>
+  <% end %>
+  </ul>
+</nav>

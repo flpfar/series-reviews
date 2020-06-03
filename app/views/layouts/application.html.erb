@@ -15,44 +15,9 @@
   </head>
 
   <body class="d-flex flex-column min-vh-100">
-    <nav class="d-flex justify-content-between align-items-center px-3">
-      <%= link_to root_path do %>
-        <%=image_tag "logo.png", alt: "Series Reviews", class: "logo"%>
-      <% end %>
-      <% if current_user %>
-      <ul class="menu nav">
-        <li class="nav-item"><a href="<%= root_path %>" class="nav-link">HOME</a></li>
-        <li class="nav-item"><a href="<%= new_review_path %>" class="nav-link">WRITE A REVIEW</a></li>
-      </ul>
-      <% end %>
-      <ul class="user-nav nav">
-      <% if current_user %>
-        <li class="nav-item"><%= link_to current_user.name.upcase, profile_path(current_user.id), class: "nav-link" %></li>
-        <li class="nav-item"><%= link_to 'LOGOUT', signout_path, method: :delete, class: "nav-link" %></li>
-      <% else %>
-        <li class="nav-item"><%= link_to 'LOGIN', signin_path, class: "nav-link" %></li>
-        <li class="nav-item"><%= link_to 'SIGNUP', signup_path, class: "nav-link" %></li>
-      <% end %>
-      </ul>
-      
-    </nav>
-    <% flash.each do |type, msg| %>
-      <div class="text-center position-absolute px-4 alert alert-<%= notice_or_alert(type) %>">
-        <%= msg %>
-      </div>
-    <% end %>
+    <%= render "/shared/navbar" %>
+    <%= render "/shared/flash_notification" %>
     <%= yield %>
-    <footer class="footer mt-auto d-flex justify-content-between align-items-center px-3">
-      <%= link_to root_path do %>
-        <%=image_tag "logo-reverse.png", alt: "Example Image", class: "logo"%>
-      <% end %>
-      <div>Copyright &copy; 2020. All rights reserved.</div>
-      <div class="d-flex align-items-center">
-        <span class="mr-2 mt-1"> Design: </span>
-        <a href="https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version">
-          <%= image_tag "behance.webp", alt: "Example Image", class: "behance-logo" %>
-        </a>
-      </div>
-    </footer>
+    <%= render "/shared/footer" %>
   </body>
 </html>
