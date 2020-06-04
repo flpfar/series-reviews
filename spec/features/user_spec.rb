@@ -2,13 +2,8 @@ require 'rails_helper'
 
 # rubocop:disable Metrics/BlockLength
 RSpec.feature 'Users', type: :feature do
-  before(:all) do
-    create(:review)
-  end
-
-  before(:each) do
-    visit root_path
-  end
+  before(:all) { create(:review) }
+  before(:each) { visit root_path }
 
   def fill_and_click(field, data)
     fill_in field, with: data
