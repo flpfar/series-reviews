@@ -22,4 +22,9 @@ RSpec.describe User, type: :model do
     user.valid?
     expect(user.errors[:name]).to include('is too short (minimum is 3 characters)')
   end
+
+  it 'should be valid when the name is properly filled' do
+    user.name = 'New User'
+    expect(user.valid?).to be(true)
+  end
 end

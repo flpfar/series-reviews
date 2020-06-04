@@ -32,4 +32,10 @@ RSpec.describe Category, type: :model do
     category.valid?
     expect(category.errors[:priority]).to include('has already been taken')
   end
+
+  it 'should be valid when the fields are properly filled' do
+    category.name = 'New Category'
+    category.priority = '9999'
+    expect(category.valid?).to be true
+  end
 end

@@ -22,4 +22,11 @@ RSpec.describe Vote, type: :model do
     vote.valid?
     expect(vote.errors[:user]).to include('has already been taken')
   end
+
+  it 'should be valid when it satisfies the validations' do
+    user = create(:user_random)
+    review = create(:review)
+    vote = Vote.create(user: user, review: review)
+    expect(vote.valid?).to be(true)
+  end
 end
