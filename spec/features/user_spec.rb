@@ -11,7 +11,7 @@ RSpec.feature 'Users', type: :feature do
   end
 
   it 'login successfully' do
-    user = create(:user, name: 'username')
+    create(:user, name: 'username')
     fill_and_click('session_username', 'username')
     expect(page).to have_content('LOGOUT')
   end
@@ -22,7 +22,7 @@ RSpec.feature 'Users', type: :feature do
   end
 
   it 'are redirected to index page when login is sucessfull' do
-    user = create(:user, name: 'username')
+    create(:user, name: 'username')
     fill_and_click('session_username', 'username')
     expect(page).to have_current_path(root_path)
   end

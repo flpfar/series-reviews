@@ -13,7 +13,7 @@ RSpec.feature 'Votes', type: :feature do
     @vote_link.click
   end
 
-  it 'are successfully saved when clicking on "Vote" in a review' do 
+  it 'are successfully saved when clicking on "Vote" in a review' do
     expect(page).to have_content('Vote saved!')
   end
 
@@ -21,7 +21,7 @@ RSpec.feature 'Votes', type: :feature do
     expect(@vote_link).to have_content('Unvote')
   end
 
-  it 'are successfully removed when clicking on "Unvote" in a review' do 
+  it 'are successfully removed when clicking on "Unvote" in a review' do
     click_link 'Unvote'
     expect(page).to have_content('Vote removed!')
   end
