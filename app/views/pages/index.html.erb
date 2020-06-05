@@ -1,0 +1,20 @@
+<% content_for :head do %>
+  <meta name="turbolinks-cache-control" content="no-cache">
+<% end %>
+
+<main class="home">
+  <section class="featured review-cover d-flex align-items-end" style="background-image: url(<%= image_url_generator(@featured_review.image)%>)">
+    <h2 class="featured-title"><%= link_to @featured_review.title, review_path(@featured_review.id), class: 'secondary-link' %></h2>
+  </section>
+
+  <section class="categories d-flex align-items-stretch mb-0">
+    <% @categories.each do |category| %>
+      <% if category.most_recent_review %>
+        <article class="category review-cover d-flex flex-column justify-content-between" style="background-image: url(<%= image_url_generator(category.most_recent_review.image)%>)">
+          <h2 class="category-title title"><%= link_to category.name, category_path(category.id), class: 'category-title-link' %></h2>
+          <h3 class="most-recent-review title"><%= link_to category.most_recent_review.title, review_path(category.most_recent_review.id), class: 'primary-link' %></h3>
+        </article>
+      <% end %>
+    <% end %>
+  </section>
+</main>

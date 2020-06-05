@@ -1,0 +1,16 @@
+<main class="category-show">
+  <h1 class="category-title page-title">
+    <span>&gt; </span>
+    Reviews by: <%= @user.name %>
+  </h1>
+  <% if @reviews.empty? %>
+    <span class="text-light text-center d-block">No reviews to show yet.</span>
+  <% end %>
+  <section class="reviews-list">
+    <% @reviews.each_with_index do |review, index| %>
+    <article class="review">
+      <%= columns_content_image_order(review, index) %>
+    </article>
+    <% end %>
+  </section>
+</main>

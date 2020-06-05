@@ -1,0 +1,17 @@
+<div class="review-content d-flex flex-column p-4">
+  <h2 class="title"><%= link_to review.title, review_path(review.id), class: 'tertiary-link' %></h2>
+  <ul class="categories-list list-group list-group-horizontal">
+    <% review.categories.each do |category| %>
+      <li class="list-group-item"><%= link_to category.name, category_path(category.id), class: 'categories-list-link' %></li>
+    <% end %>
+  </ul>
+  <div class="review-footer mt-auto d-flex justify-content-between">
+    <div class="review-author">
+      <%= show_owner_controllers(review.author_id, review.id) %>
+    </div>
+    <div class="review-votes">
+      <%= vote_or_unvote_btn(review) %>
+      <%= fa_icon "star", text: review.votes.size %>
+    </div>
+  </div>
+</div>

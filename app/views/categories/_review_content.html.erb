@@ -1,0 +1,19 @@
+<div class="review-content d-flex flex-column p-4">
+  <h2 class="title"><%= link_to review.title, review_path(review.id), class: 'tertiary-link' %></h2>
+  <p class="text">
+    <%=review.text[0..201]%>
+    <%='...' if review.text.length > 200 %>
+  </p>
+  <div class="review-footer mt-auto d-flex justify-content-between">
+    <div class="review-author">
+      <% unless review.author_id == current_user.id %>
+        by <%= link_to review.author.name, profile_path(review.author_id), class: 'author-profile-link' %>
+      <% end %>
+      <%= show_owner_controllers(review.author_id, review.id) %>
+    </div>
+    <div class="review-votes">
+      <%= vote_or_unvote_btn(review) %>
+      <%= fa_icon "star", text: review.votes.size %>
+    </div>
+  </div>
+</div>

@@ -14,3 +14,20 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+//= require jquery.slick
+
+$(document).on('turbolinks:load', function(){
+  $('.categories').slick({
+      infinite: true,
+      speed: 300,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+  });
+});
+
+$(document).ready(function(){
+  setTimeout(function(){$('.alert').slideUp()} , 3000);
+});
